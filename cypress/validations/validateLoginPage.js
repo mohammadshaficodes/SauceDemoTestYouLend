@@ -14,3 +14,7 @@ export const validateTitle = () => {
 export const validateLogo = () => {
     LOG_IN_PAGE.logInLogo().should('exist');
 };
+
+export const validateErrorMessage = (error) => {
+    LOG_IN_PAGE.errorMessage().should('have.text', 'Epic sadface: Sorry, this user has been locked out.');
+}

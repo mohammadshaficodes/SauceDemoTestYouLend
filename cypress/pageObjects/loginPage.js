@@ -17,4 +17,7 @@ export class LoginPage {
     logInLogo() {
         return cy.get('.login_logo')
     }
+    errorMessage() {
+        return cy.get('[data-test="error"]');
+    }
 }

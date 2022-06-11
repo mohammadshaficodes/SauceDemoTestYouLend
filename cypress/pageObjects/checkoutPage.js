@@ -11,9 +11,6 @@ export class CheckoutPage {
     continueButton() {
         return cy.get('[data-test="continue"]')
     }
-    finishButton() {
-        return cy.get('[data-test="finish"]')
-    }
     itemPriceSubtotal() {
         return cy.get('[class="summary_subtotal_label"]')
     }
@@ -35,7 +32,10 @@ export class CheckoutPage {
     boltTShirtPrice() {
         return cy.get('[class="inventory_item_price"]').eq(1)
     }
-    itemPrices() {
-        return cy.get('[class="inventory_item_price"]')
+    menuButton() {
+        return cy.get('[class="bm-burger-button"]')
+    }
+    logoutButton() {
+        return cy.get('[id="logout_sidebar_link"]')
     }
 }
