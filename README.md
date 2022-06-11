@@ -6,7 +6,7 @@ You will need Cypress installed, please follow the guide on https://docs.cypress
 
 To run the test in the browser from the root directory, run the following command and click the feature file displayed in the cypress client:
 
-npx cypress open
+npx cypress open 
 
 To run the test in headless mode, from the root directory, run:
 
