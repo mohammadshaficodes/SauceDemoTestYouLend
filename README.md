@@ -1,12 +1,8 @@
-# Saucedemo# SauceDemo
-
-# Saucedemo# SauceDemo
-
-This project contains an automated e2e test of saucedemo.com
+# Saucedemo
 
 **To run this project**
 
-You will need Cypress installed, please follow the guide on https://docs.cypress.io/guides/getting-started/installing-cypress#Installing
+You will need Cypress installed, please follow the guide on https://docs.cypress.io/guides/getting-started/installing-cypress#Installing (PLEASE USE CYPRESS V9.X, NOT V10)
 
 To run the test in the browser from the root directory, run the following command and click the feature file displayed in the cypress client:
 
@@ -16,11 +12,16 @@ To run the test in headless mode, from the root directory, run:
 
 npx cypress run
 
-**A guide to the file structure:**
+**The file structure is as follows:**
 
-- Page objects are kept in the pageObjects folder
-- Validations are kept in the validations folder and seperated per page
+- Page object files are in the pageObjects folder
+- Validations are in the validations folder
 - User data is kept in testUser.json, in the fixtures folder
 
-This structure has been chosen to allow this test framework to be scalable as more customers, pages, scenarios and validations are added.
+**Tech Debt & Improvements**
+
+- More assertions on each page for more complete testing
+- Initialise page objects in a separate file, and import that file into the step definitions folder (Singleton design pattern)
+- Use regular expressions (RegEx) to remove text and special characters when obtaining prices, when multiple items are in the basket
+
 
