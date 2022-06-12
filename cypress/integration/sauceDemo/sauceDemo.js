@@ -12,7 +12,7 @@ import * as productItemValidations from "../../validations/validateProductItemPa
 import userTest from "../../fixtures/testUser.json"
 
 const login = new LoginPage();
-const productsPage = new ProductsPage();
+const products = new ProductsPage();
 const checkout = new CheckoutPage();
 const cartPage = new CartPage();
 const product = new ProductItemPage();
@@ -31,11 +31,11 @@ When('User logs in as standard user', () => {
 });
 
 And('Adds an item to the cart', () => {
-    productsPage.addFleeceToCartButton().click();
+    products.addFleeceToCartButton().click();
 });
 
 Then('User views their cart and verifies the correct item is added total price', () => {
-    productsPage.cartButton().click();
+    products.cartButton().click();
     cartPageValidations.validateTitle();
     cartPageValidations.validateItemTitle();
     cartPageValidations.validateItemPrice();
@@ -43,8 +43,8 @@ Then('User views their cart and verifies the correct item is added total price',
 
 And('User adds another item to the cart', () => {
     cartPage.continueShopping().click();
-    productsPage.addBoltTShirtToCartButton().click();
-    productsPage.cartButton().click();
+    products.addBoltTShirtToCartButton().click();
+    products.cartButton().click();
 });
 
 Then('User verifies the total price', () => {
@@ -75,7 +75,7 @@ When('User logs in as problem_user', () => {
 });
 
 And('User sorts products from low to high', () => {
-    productsPage.sortLoHi();
+    products.sortLoHi();
     //Un comment line below to catch the sorting by price bug
     //productsPageValidations.validateLowestPrice();
 
@@ -84,7 +84,7 @@ And('User sorts products from low to high', () => {
 });
 
 And('User clicks on the first product', () => {
-    productsPage.firstProduct().click();
+    products.firstProduct().click();
     //Un comment line below to catch the bug opening incorrect product pages when clicking on a product
     //productItemValidations.validateItemTitle();
 });
