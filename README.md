@@ -4,6 +4,8 @@
 
 You will need Cypress installed, please follow the guide on https://docs.cypress.io/guides/getting-started/installing-cypress#Installing (PLEASE USE CYPRESS V9.X, NOT V10)
 
+Clone this repository on your machine, or download the zip folder, unzip and open in your IDE
+
 To run the test in the browser from the root directory, run the following command and click the feature file displayed in the cypress client:
 
 npx cypress open 
@@ -14,6 +16,7 @@ npx cypress run
 
 **The file structure is as follows:**
 
+- The feature file is in the integration folder, with the corresponding step definitions located in the identically named folder
 - Page object files are in the pageObjects folder
 - Validations are in the validations folder
 - User data is kept in testUser.json, in the fixtures folder
