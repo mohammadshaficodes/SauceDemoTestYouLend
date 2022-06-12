@@ -11,7 +11,7 @@ export const validateFinishButton = () => {
 };
 
 export const validateTotalPrice = () => {
-    // getting the subtotal of both items 
+    // getting the sum subtotal of both items
     CHECKOUT_PAGE.itemPriceSubtotal().invoke('text').then((text) => {
         //get the number subtotal
         let strippedText = text.split(' ');
@@ -48,7 +48,7 @@ export const validateTotalPrice = () => {
                         let numTotal = strippedText[1].split('$');
                         let total = parseFloat(numTotal[1]);
 
-                        // Assertions
+                        // Assertions - Comparing the sum of both items to the subtotal shown at the bottom
                         expect(sumOfItems).to.equal(numSubtotal);
                         expect(calculatedTax).to.equal(tax);
                         expect(totalIncTax).to.equal(total);
